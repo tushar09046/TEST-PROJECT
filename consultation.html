@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/jpeg" href="resource/Tushar automates.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="resource/Tushar automates.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultation Ã¢â‚¬â€ ClickCraft | Growth Strategy & Performance Audit</title>
+  <meta name="description" content="Book a free growth strategy consultation with ClickCraft. Get a custom performance audit, funnel analysis, and 90-day scaling roadmap.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #F85A3E;
+      --primary-light: #FF7733;
+      --primary-dark: #E63B2E;
+      --dark: #0d0d0d;
+      --heading: #1a1a2e;
+      --body: #555555;
+      --body-light: #777777;
+      --white: #FFFFFF;
+      --light-bg: #E1E6E1;
+      --card-bg: #ffffff;
+      --border: #d4d9d4;
+      --shadow: 0 4px 24px rgba(248, 90, 62, 0.08);
+      --shadow-hover: 0 8px 40px rgba(248, 90, 62, 0.15);
+      --radius: 12px;
+      --radius-lg: 20px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--body); background: var(--white); line-height: 1.7; overflow-x: hidden;
+    }
+    .serif { font-family: 'Cardo', Georgia, serif; }
+
+    /* ===== NAVIGATION ===== */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border); transition: box-shadow 0.3s ease;
+    }
+    .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+    .nav-container {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 72px;
+    }
+    .nav-logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; color: var(--heading); text-decoration: none; }
+    .nav-logo span { color: var(--primary); }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--body); text-decoration: none; transition: color 0.3s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s; }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--primary); }
+    .nav-links a.active::after { width: 100%; }
+    .nav-cta { background: var(--primary) !important; color: var(--white) !important; padding: 10px 24px !important; border-radius: 8px; font-weight: 600 !important; transition: all 0.3s !important; }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--primary-dark) !important; transform: translateY(-1px); }
+    .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--heading); margin: 5px 0; transition: all 0.3s; }
+    .mobile-nav { display: none; position: fixed; inset: 0; z-index: 200; background: var(--white); flex-direction: column; justify-content: center; align-items: center; gap: 24px; }
+    .mobile-nav.active { display: flex; }
+    .mobile-nav a { font-size: 1.25rem; font-weight: 600; color: var(--heading); text-decoration: none; transition: color 0.3s; }
+    .mobile-nav a:hover { color: var(--primary); }
+    .mobile-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--heading); }
+    @media (max-width: 768px) { .nav-links { display: none; } .mobile-toggle { display: block; } }
+
+    /* ===== BUTTONS ===== */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; font-family: 'Inter', sans-serif; text-decoration: none; border: none; cursor: pointer; transition: all 0.3s ease; }
+    .btn-primary { background: var(--primary); color: var(--white); box-shadow: 0 4px 16px rgba(248, 90, 62, 0.3); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(248, 90, 62, 0.4); }
+
+    /* ===== SECTION LAYOUT ===== */
+    .section { padding: 100px 24px; }
+    .section-alt { background: var(--light-bg); }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); margin-bottom: 12px; }
+    .section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--heading); line-height: 1.2; margin-bottom: 20px; letter-spacing: -0.5px; }
+    .section-desc { font-size: 1.1rem; color: var(--body); max-width: 600px; line-height: 1.8; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header .section-desc { margin: 0 auto; }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      padding: 140px 24px 80px; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, #f7f8fc 0%, #eef1ff 50%, #f7f8fc 100%);
+      text-align: center;
+    }
+    .page-hero h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 800; color: var(--heading); line-height: 1.15; letter-spacing: -1px; margin-bottom: 24px; }
+    .page-hero h1 span { color: var(--primary); }
+    .page-hero p { font-size: 1.1rem; color: var(--body); line-height: 1.8; max-width: 620px; margin: 0 auto; }
+    .page-hero .hero-tagline { font-family: 'Cardo', serif; font-style: italic; font-size: 1.1rem; color: var(--primary); margin-bottom: 16px; }
+
+    /* ===== CONSULT LAYOUT ===== */
+    .consult-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: start; }
+    @media (max-width: 768px) { .consult-grid { grid-template-columns: 1fr; } }
+
+    /* Agenda Steps */
+    .agenda-list { display: flex; flex-direction: column; gap: 28px; }
+    .agenda-item { display: flex; gap: 20px; align-items: flex-start; }
+    .agenda-num {
+      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(10,61,220,0.1), rgba(77,120,255,0.1));
+      color: var(--primary); font-weight: 800; font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .agenda-text h4 { font-size: 1.05rem; font-weight: 700; color: var(--heading); margin-bottom: 4px; }
+    .agenda-text p { font-size: 0.9rem; line-height: 1.6; }
+    .guarantee {
+      margin-top: 32px; padding: 24px; border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(10,61,220,0.04), rgba(77,120,255,0.06));
+      border-left: 4px solid var(--primary);
+    }
+    .guarantee h4 { font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+    .guarantee p { font-size: 0.9rem; }
+
+    /* Booking Form */
+    .form-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 40px;
+      box-shadow: var(--shadow-hover);
+    }
+    .form-card h3 { font-size: 1.5rem; font-weight: 800; color: var(--heading); margin-bottom: 6px; }
+    .form-card > p { font-size: 0.9rem; color: var(--body-light); margin-bottom: 28px; }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 18px; }
+    .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--heading); margin-bottom: 6px; }
+    .form-group input, .form-group textarea, .form-group select {
+      padding: 12px 16px; border: 1px solid var(--border); border-radius: 8px;
+      font-size: 0.95rem; font-family: 'Inter', sans-serif;
+      color: var(--heading); background: var(--white); transition: border-color 0.3s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(248, 90, 62, 0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 768px) { .form-row { grid-template-columns: 1fr; } }
+    .form-submit { width: 100%; justify-content: center; margin-top: 8px; }
+
+    #formResponse { display: none; padding: 20px; border-radius: 8px; text-align: center; margin-top: 12px; }
+
+    /* ===== FAQ ===== */
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .faq-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; transition: all 0.3s ease; }
+    .faq-card:hover { box-shadow: var(--shadow); border-color: var(--primary-light); }
+    .faq-card h4 { font-size: 1rem; font-weight: 700; color: var(--heading); margin-bottom: 8px; }
+    .faq-card p { font-size: 0.9rem; line-height: 1.6; }
+    @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } }
+
+    /* ===== SERVICES OVERVIEW ===== */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .service-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 36px; transition: all 0.4s ease;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--primary-light); }
+    .service-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      background: linear-gradient(135deg, rgba(10,61,220,0.1), rgba(77,120,255,0.1));
+      display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+    }
+    .service-icon svg { width: 28px; height: 28px; color: var(--primary); }
+    .service-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--heading); margin-bottom: 12px; }
+    .service-card p { font-size: 0.95rem; line-height: 1.7; }
+
+    /* ===== FOOTER ===== */
+    .footer { background: var(--dark); color: rgba(255,255,255,0.6); padding: 60px 24px 30px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand h3 { font-size: 1.5rem; font-weight: 800; color: var(--white); margin-bottom: 16px; }
+    .footer-brand h3 span { color: var(--primary-light); }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 300px; }
+    .footer-col h4 { font-size: 0.9rem; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { font-size: 0.9rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.3s; }
+    .footer-col a:hover { color: var(--primary-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; } }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" style="display:inline-flex;align-items:center;gap:4px;"><img src="resource/Tushar automates.jpg" alt="Logo" style="height:36px;width:36px;border-radius:6px;object-fit:cover;">Click<span>Craft</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="consultation.html" class="active">Consultation</a>
+        <a href="contact.html">Contact</a>
+        <a href="consultation.html" class="nav-cta">Get Started</a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" id="mobileClose">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="consultation.html">Consultation</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container reveal">
+      <p class="hero-tagline serif">Growth Strategy Session</p>
+      <h1>Book Your <span>Free Performance</span> Consultation</h1>
+      <p>Schedule a 45-minute strategy call with our senior growth strategists. We'll audit your campaigns, analyze your funnel, and deliver a custom 90-day scaling roadmap.</p>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Full-Stack Growth Marketing Services</h2>
+        <p class="section-desc">End-to-end performance marketing solutions built to scale your revenue and optimize your customer acquisition cost.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
+          <h3>Paid Media Management</h3>
+          <p>Strategic campaign management across Meta, Google, TikTok, and LinkedIn with rigorous creative testing and audience optimization.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg></div>
+          <h3>Landing Page & CRO</h3>
+          <p>Data-driven landing page optimization, A/B testing, and conversion rate improvements that turn more clicks into customers.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+          <h3>Analytics & Attribution</h3>
+          <p>Custom dashboards, marketing mix modeling, and multi-touch attribution to understand true campaign impact on revenue.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <h3>Growth Strategy & Advisory</h3>
+          <p>Unit economics modeling, go-to-market planning, channel diversification, and strategic advisory for scaling brands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultation Booking Section -->
+  <section class="section" id="book">
+    <div class="container">
+      <div class="consult-grid">
+
+        <!-- Left: Agenda -->
+        <div class="reveal">
+          <span class="section-label">Consultation Agenda</span>
+          <h2 class="section-title" style="max-width:480px;">What We Cover In Your Strategy Call</h2>
+          <div class="agenda-list" style="margin-top:32px;">
+
+            <div class="agenda-item">
+
+              <div class="agenda-num">1</div>
+
+              <div class="agenda-text">
+
+                <h4>Full Paid Media Account Audit</h4>
+
+                <p>We analyze your campaign architecture across Meta & Google to identify wasted spend and audience inefficiencies.</p>
+
+              </div>
+
+            </div>
+
+            <div class="agenda-item">
+
+              <div class="agenda-num">2</div>
+
+              <div class="agenda-text">
+
+                <h4>Funnel & Conversion Bottleneck Analysis</h4>
+
+                <p>Identify landing page drop-offs, user experience friction points, and immediate revenue-lift opportunities.</p>
+
+              </div>
+
+            </div>
+
+            <div class="agenda-item">
+
+              <div class="agenda-num">3</div>
+
+              <div class="agenda-text">
+
+                <h4>Unit Economics & Profitability Modeling</h4>
+
+                <p>Evaluate your CAC, ROAS targets, LTV ratios, and contribution margin thresholds for sustainable scaling.</p>
+
+              </div>
+
+            </div>
+
+            <div class="agenda-item">
+
+              <div class="agenda-num">4</div>
+
+              <div class="agenda-text">
+
+                <h4>Custom 90-Day Growth Roadmap</h4>
+
+                <p>Walk away with a clear execution blueprint and prioritized action items to implement immediately.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="guarantee">
+
+            <h4>No Sales Pitch Guarantee</h4>
+
+            <p>This is a genuine strategic teardown conducted by senior strategists Ã¢â‚¬â€ you keep the roadmap regardless of whether you engage us.</p>
+
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="form-card reveal">
+          <h3>Request Your Session</h3>
+          <p>Fill in your details below and we'll match you with the right strategist.</p>
+          <form id="consultForm" action="https://formsubmit.co/hello@clickcraft.com" method="POST">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Consultation Request - ClickCraft">
+            <input type="hidden" name="_next" value="">
+            <input type="hidden" name="_template" value="table">
+
+            <div class="form-row">
+
+              <div class="form-group"><label for="fullName">Full Name *</label><input type="text" id="fullName" name="Full Name" placeholder="John Doe" required></div>
+
+              <div class="form-group"><label for="email">Work Email *</label><input type="email" id="email" name="Work Email" placeholder="john@company.com" required></div>
+
+            </div>
+
+            <div class="form-group"><label for="website">Company Website *</label><input type="url" id="website" name="Company Website" placeholder="https://yourbrand.com" required></div>
+
+            <div class="form-row">
+
+              <div class="form-group">
+
+                <label for="adSpend">Monthly Ad Spend *</label>
+
+                <select id="adSpend" name="Monthly Ad Spend" required>
+
+                  <option value="" disabled selected>Select range</option>
+
+                  <option>Under $5,000 / mo</option>
+
+                  <option>$5,000 - $25,000 / mo</option>
+
+                  <option>$25,000 - $100,000 / mo</option>
+
+                  <option>$100,000+ / mo</option>
+
+                </select>
+
+              </div>
+
+              <div class="form-group">
+
+                <label for="goal">Primary Goal *</label>
+
+                <select id="goal" name="Primary Goal" required>
+
+                  <option value="" disabled selected>Select objective</option>
+
+                  <option>Scale ROAS & Spend</option>
+
+                  <option>Improve Landing Page CRO</option>
+
+                  <option>Fix High CAC / Inefficiency</option>
+
+                  <option>Growth Advisory & Strategy</option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+            <div class="form-group"><label for="notes">Current Challenges (Optional)</label><textarea id="notes" name="Challenges" placeholder="Tell us about your current channels or key bottlenecks..."></textarea></div>
+
+            <button type="submit" class="btn btn-primary form-submit">Schedule My Strategy Call
+
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+
+            </button>
+          </form>
+          <div id="formResponse"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">FAQs</span>
+        <h2 class="section-title">Consultation Questions</h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-card reveal"><h4>Who conducts the consultation?</h4><p>You'll speak directly with a senior performance strategist or media buying lead who actively manages ad accounts Ã¢â‚¬â€ not a sales rep.</p></div>
+        <div class="faq-card reveal"><h4>What should I prepare?</h4><p>No heavy prep needed. Sharing guest view access to your ad accounts or Google Analytics before the call allows us to go deeper.</p></div>
+        <div class="faq-card reveal"><h4>Is there a cost involved?</h4><p>The initial 45-minute strategy consultation is complimentary for brands spending $5K+/month on paid media.</p></div>
+        <div class="faq-card reveal"><h4>What happens after the call?</h4><p>You receive your custom growth roadmap within 48 hours, regardless of whether you decide to partner with ClickCraft.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+            <img src="resource/Tushar automates.jpg" alt="Logo" style="height:36px;width:36px;border-radius:6px;object-fit:cover;">
+            <h3 style="margin-bottom:0;">Click<span>Craft</span></h3>
+          </div>
+          <p>A performance marketing and growth consultancy helping brands scale with data-driven strategies, paid media, and conversion optimization.</p>
+        </div>
+        <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="consultation.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Services</h4><ul><li><a href="consultation.html">Performance Marketing</a></li><li><a href="consultation.html">Growth Strategy</a></li><li><a href="consultation.html">SEO & Content</a></li><li><a href="consultation.html">Analytics</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">LinkedIn</a></li><li><a href="#">Twitter</a></li><li><a href="#">Instagram</a></li><li><a href="mailto:hello@clickcraft.com">Email Us</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 ClickCraft. All rights reserved. Performance Marketing & Growth Consultancy.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50); });
+    document.getElementById('mobileToggle').addEventListener('click', () => { document.getElementById('mobileNav').classList.add('active'); });
+    document.getElementById('mobileClose').addEventListener('click', () => { document.getElementById('mobileNav').classList.remove('active'); });
+    document.querySelectorAll('.mobile-nav a').forEach(a => { a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('active')); });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    function validateBusinessEmail(email) {
+      var blockedDomains = ['gmail.com','yahoo.com','yahoo.in','yahoo.co.in','yahoo.co.uk','hotmail.com','outlook.com','live.com','msn.com','aol.com','icloud.com','me.com','mac.com','mail.com','protonmail.com','proton.me','zoho.com','yandex.com','gmx.com','gmx.net','rediffmail.com','fastmail.com','tutanota.com','guerrillamail.com','mailinator.com','tempmail.com','throwaway.email','yopmail.com','sharklasers.com','guerrillamailblock.com','grr.la','dispostable.com','maildrop.cc'];
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      if (!emailRegex.test(email)) return 'Please enter a valid email address.';
+      var domain = email.split('@')[1].toLowerCase();
+      if (blockedDomains.indexOf(domain) !== -1) return 'Please use your business email address. Free email providers (Gmail, Yahoo, etc.) are not accepted.';
+      return null;
+    }
+
+    document.getElementById('consultForm').addEventListener('submit', function(e) {
+      var emailVal = document.getElementById('email').value.trim();
+      var validationError = validateBusinessEmail(emailVal);
+      var resp = document.getElementById('formResponse');
+      if (validationError) {
+        e.preventDefault();
+        resp.style.display = 'block';
+        resp.style.background = 'rgba(220, 53, 69, 0.1)';
+        resp.style.color = '#dc3545';
+        resp.style.fontWeight = '600';
+        resp.innerHTML = '&#9888; ' + validationError;
+        setTimeout(function() { resp.style.display = 'none'; }, 5000);
+        return;
+      }
+      resp.style.display = 'block';
+      resp.style.background = 'rgba(248, 90, 62, 0.08)';
+      resp.style.color = 'var(--primary)';
+      resp.style.fontWeight = '600';
+      resp.innerHTML = '&#10003; Sending your consultation request...';
+    });
+  </script>
+</body>
+</html>
+

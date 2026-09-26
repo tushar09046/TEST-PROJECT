@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/jpeg" href="resource/Tushar automates.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="resource/Tushar automates.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — ClickCraft | Performance Marketing & Growth Consultancy</title>
+  <meta name="description" content="Learn about ClickCraft — a performance marketing and growth consultancy helping brands scale with data-driven strategies, paid media, and conversion optimization.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #F85A3E;
+      --primary-light: #FF7733;
+      --primary-dark: #E63B2E;
+      --dark: #0d0d0d;
+      --heading: #1a1a2e;
+      --body: #555555;
+      --body-light: #777777;
+      --white: #FFFFFF;
+      --light-bg: #E1E6E1;
+      --card-bg: #ffffff;
+      --border: #d4d9d4;
+      --shadow: 0 4px 24px rgba(248, 90, 62, 0.08);
+      --shadow-hover: 0 8px 40px rgba(248, 90, 62, 0.15);
+      --radius: 12px;
+      --radius-lg: 20px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--body); background: var(--white); line-height: 1.7; overflow-x: hidden;
+    }
+    .serif { font-family: 'Cardo', Georgia, serif; }
+
+    /* ===== NAVIGATION ===== */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border); transition: box-shadow 0.3s ease;
+    }
+    .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+    .nav-container {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 72px;
+    }
+    .nav-logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; color: var(--heading); text-decoration: none; }
+    .nav-logo span { color: var(--primary); }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a {
+      font-size: 0.9rem; font-weight: 500; color: var(--body);
+      text-decoration: none; transition: color 0.3s; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px; background: var(--primary); transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--primary); }
+    .nav-links a.active::after { width: 100%; }
+    .nav-cta {
+      background: var(--primary) !important; color: var(--white) !important;
+      padding: 10px 24px !important; border-radius: 8px;
+      font-weight: 600 !important; transition: all 0.3s !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--primary-dark) !important; transform: translateY(-1px); }
+    .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--heading); margin: 5px 0; transition: all 0.3s; }
+    .mobile-nav {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: var(--white); flex-direction: column;
+      justify-content: center; align-items: center; gap: 24px;
+    }
+    .mobile-nav.active { display: flex; }
+    .mobile-nav a { font-size: 1.25rem; font-weight: 600; color: var(--heading); text-decoration: none; transition: color 0.3s; }
+    .mobile-nav a:hover { color: var(--primary); }
+    .mobile-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--heading); }
+    @media (max-width: 768px) { .nav-links { display: none; } .mobile-toggle { display: block; } }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 8px; font-size: 0.95rem; font-weight: 600;
+      font-family: 'Inter', sans-serif; text-decoration: none; border: none; cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-primary { background: var(--primary); color: var(--white); box-shadow: 0 4px 16px rgba(248, 90, 62, 0.3); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(248, 90, 62, 0.4); }
+    .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+    .btn-outline:hover { background: var(--primary); color: var(--white); }
+
+    /* ===== SECTION LAYOUT ===== */
+    .section { padding: 100px 24px; }
+    .section-alt { background: var(--light-bg); }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      display: inline-block; font-size: 0.8rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 2px; color: var(--primary); margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--heading);
+      line-height: 1.2; margin-bottom: 20px; letter-spacing: -0.5px;
+    }
+    .section-desc { font-size: 1.1rem; color: var(--body); max-width: 600px; line-height: 1.8; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header .section-desc { margin: 0 auto; }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      padding: 140px 24px 80px; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, #f7f8fc 0%, #eef1ff 50%, #f7f8fc 100%);
+    }
+    .page-hero .container {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .page-hero .hero-tagline { font-family: 'Cardo', serif; font-style: italic; font-size: 1.1rem; color: var(--primary); margin-bottom: 16px; }
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 800; color: var(--heading);
+      line-height: 1.15; letter-spacing: -1px; margin-bottom: 24px;
+    }
+    .page-hero h1 span { color: var(--primary); }
+    .page-hero p { font-size: 1.1rem; color: var(--body); line-height: 1.8; max-width: 520px; }
+    .hero-visual { display: flex; justify-content: center; align-items: center; }
+    .hero-graphic {
+      width: 100%; max-width: 400px; aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      display: flex; align-items: center; justify-content: center;
+      animation: morphBlob 8s ease-in-out infinite;
+      box-shadow: 0 20px 60px rgba(248, 90, 62, 0.25);
+    }
+    .hero-graphic-inner { color: white; text-align: center; padding: 40px; }
+    .hero-graphic-inner svg { width: 80px; height: 80px; margin-bottom: 16px; }
+    .hero-graphic-inner p { color: rgba(255,255,255,0.9); font-size: 1rem; font-weight: 500; }
+    @keyframes morphBlob {
+      0%,100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+      25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
+      50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+      75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
+    }
+    @media (max-width: 768px) {
+      .page-hero .container { grid-template-columns: 1fr; text-align: center; }
+      .page-hero p { margin: 0 auto; }
+      .hero-graphic { max-width: 260px; margin: 0 auto; }
+    }
+
+    /* ===== STORY SECTION ===== */
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .story-content .section-title { max-width: 500px; }
+    .story-highlight {
+      background: linear-gradient(135deg, rgba(10,61,220,0.04), rgba(77,120,255,0.06));
+      border-left: 4px solid var(--primary); padding: 24px 28px; border-radius: 0 var(--radius) var(--radius) 0;
+      margin-top: 24px;
+    }
+    .story-highlight p { font-family: 'Cardo', serif; font-style: italic; font-size: 1.15rem; color: var(--heading); line-height: 1.6; }
+    .story-visual {
+      background: var(--light-bg); border-radius: var(--radius-lg); padding: 48px;
+      display: flex; flex-direction: column; gap: 24px;
+    }
+    .story-stat { display: flex; align-items: center; gap: 16px; }
+    .story-stat-number {
+      font-size: 2.2rem; font-weight: 800; color: var(--primary); min-width: 90px;
+    }
+    .story-stat-text h4 { font-size: 1rem; font-weight: 700; color: var(--heading); margin-bottom: 2px; }
+    .story-stat-text p { font-size: 0.85rem; color: var(--body-light); }
+    @media (max-width: 768px) { .story-grid { grid-template-columns: 1fr; } }
+
+    /* ===== VALUES GRID ===== */
+    .values-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;
+    }
+    .value-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 36px; transition: all 0.4s ease;
+    }
+    .value-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--primary-light); }
+    .value-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      background: linear-gradient(135deg, rgba(10,61,220,0.1), rgba(77,120,255,0.1));
+      display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+    }
+    .value-icon svg { width: 28px; height: 28px; color: var(--primary); }
+    .value-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--heading); margin-bottom: 12px; }
+    .value-card p { font-size: 0.95rem; line-height: 1.7; }
+
+    /* ===== TEAM SECTION ===== */
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .team-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden; transition: all 0.4s ease;
+    }
+    .team-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .team-avatar {
+      height: 280px; background: linear-gradient(135deg, #eef1ff, #d8dfff);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .team-avatar svg { width: 64px; height: 64px; color: var(--primary); opacity: 0.5; }
+    .team-info { padding: 24px; }
+    .team-info h3 { font-size: 1.15rem; font-weight: 700; color: var(--heading); margin-bottom: 4px; }
+    .team-role { font-size: 0.85rem; font-weight: 600; color: var(--primary); margin-bottom: 12px; }
+    .team-info p { font-size: 0.9rem; line-height: 1.6; }
+
+    /* ===== STATS ===== */
+    .stats-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      padding: 80px 24px;
+    }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
+    .stat-item h3 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--white); margin-bottom: 8px; }
+    .stat-item p { font-size: 0.9rem; color: rgba(255,255,255,0.7); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+    @media (max-width: 768px) { .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; } }
+
+    /* ===== CTA BANNER ===== */
+    .cta-section { padding: 100px 24px; text-align: center; background: var(--light-bg); }
+    .cta-box {
+      background: linear-gradient(135deg, var(--heading) 0%, #2a2a4a 100%);
+      border-radius: var(--radius-lg); padding: 80px 40px; max-width: 900px; margin: 0 auto;
+    }
+    .cta-box .section-title { color: var(--white); }
+    .cta-box .section-desc { color: rgba(255,255,255,0.7); margin: 0 auto 32px; }
+
+    /* ===== FOOTER ===== */
+    .footer { background: var(--dark); color: rgba(255,255,255,0.6); padding: 60px 24px 30px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand h3 { font-size: 1.5rem; font-weight: 800; color: var(--white); margin-bottom: 16px; }
+    .footer-brand h3 span { color: var(--primary-light); }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 300px; }
+    .footer-col h4 { font-size: 0.9rem; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { font-size: 0.9rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.3s; }
+    .footer-col a:hover { color: var(--primary-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; } }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" style="display:inline-flex;align-items:center;gap:4px;"><img src="resource/Tushar automates.jpg" alt="Logo" style="height:36px;width:36px;border-radius:6px;object-fit:cover;">Click<span>Craft</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="consultation.html">Consultation</a>
+        <a href="contact.html">Contact</a>
+        <a href="consultation.html" class="nav-cta">Get Started</a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" id="mobileClose">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="consultation.html">Consultation</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="reveal">
+        <p class="hero-tagline serif">Performance-Driven Growth Partners</p>
+        <h1>We Help Brands <span>Scale Profitably</span> With Data-Driven Marketing</h1>
+        <p>ClickCraft is a performance marketing and growth consultancy that combines deep analytical expertise with creative execution to drive measurable business outcomes for ambitious brands.</p>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-graphic">
+          <div class="hero-graphic-inner">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <p>Growth Through Precision</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="section">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-content reveal">
+          <span class="section-label">Our Story</span>
+          <h2 class="section-title">Born From a Belief That Marketing Should Be Accountable</h2>
+          <p class="section-desc">ClickCraft was founded with a clear mission: eliminate the gap between marketing spend and business results. We saw too many brands pouring budgets into campaigns with no clear path to profitability.</p>
+          <div class="story-highlight">
+            <p>"Every dollar spent should be traceable to a business outcome. That's not a philosophy — it's our operating system."</p>
+          </div>
+        </div>
+        <div class="story-visual reveal">
+          <div class="story-stat">
+            <div class="story-stat-number">150+</div>
+            <div class="story-stat-text"><h4>Brands Scaled</h4><p>Across e-commerce, SaaS, and D2C</p></div>
+          </div>
+          <div class="story-stat">
+            <div class="story-stat-number">3.2x</div>
+            <div class="story-stat-text"><h4>Average ROAS</h4><p>Across all client campaigns</p></div>
+          </div>
+          <div class="story-stat">
+            <div class="story-stat-number">$50M+</div>
+            <div class="story-stat-text"><h4>Ad Spend Managed</h4><p>Profitably scaled across platforms</p></div>
+          </div>
+          <div class="story-stat">
+            <div class="story-stat-number">8+</div>
+            <div class="story-stat-text"><h4>Years of Expertise</h4><p>In performance and growth marketing</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal"><h3>150+</h3><p>Clients Served</p></div>
+        <div class="stat-item reveal"><h3>5K+</h3><p>Campaigns Launched</p></div>
+        <div class="stat-item reveal"><h3>3.2x</h3><p>Average ROAS</p></div>
+        <div class="stat-item reveal"><h3>8+</h3><p>Years Experience</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Our Values</span>
+        <h2 class="section-title">The Principles That Drive Our Work</h2>
+        <p class="section-desc">Every strategy, campaign, and recommendation we deliver is rooted in these core values.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="value-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3>Data-First Decision Making</h3>
+          <p>We don't guess — we measure. Every creative decision, budget allocation, and audience targeting strategy is backed by rigorous data analysis and testing frameworks.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3>ROI Accountability</h3>
+          <p>We tie every campaign to revenue outcomes. No vanity metrics, no inflated reports — just transparent, honest performance tracking tied to your bottom line.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3>Partnership Mentality</h3>
+          <p>We embed ourselves into your team. We share playbooks, build internal capabilities, and ensure you're never dependent on us — empowering your own growth team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Our Team</span>
+        <h2 class="section-title">Growth Strategists & Performance Experts</h2>
+        <p class="section-desc">A seasoned team of media buyers, CRO specialists, and analytics engineers who live and breathe performance marketing.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-avatar">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <div class="team-info">
+            <h3>Alex Mitchell</h3>
+            <p class="team-role">Founder & Chief Growth Officer</p>
+            <p>Former VP Growth at scaling D2C brands. Expert in full-funnel paid acquisition, unit economics modeling, and building performance teams from zero to scale.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-avatar">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <div class="team-info">
+            <h3>Priya Sharma</h3>
+            <p class="team-role">Head of Media Buying</p>
+            <p>Specializes in Meta Ads and Google Ads at scale. Managed over $30M in profitable ad spend across e-commerce, SaaS, and lead generation verticals.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-avatar">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <div class="team-info">
+            <h3>David Chen</h3>
+            <p class="team-role">CRO & Analytics Lead</p>
+            <p>Conversion rate optimization expert with deep expertise in A/B testing, landing page design, attribution modeling, and building custom analytics dashboards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-section">
+    <div class="cta-box reveal">
+      <span class="section-label" style="color:var(--primary-light);">Ready to Grow?</span>
+      <h2 class="section-title">Let's Build Your Growth Engine Together</h2>
+      <p class="section-desc">Book a free growth strategy session with our team and discover untapped opportunities in your marketing funnel.</p>
+      <a href="consultation.html" class="btn btn-primary">Book Free Consultation
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+            <img src="resource/Tushar automates.jpg" alt="Logo" style="height:36px;width:36px;border-radius:6px;object-fit:cover;">
+            <h3 style="margin-bottom:0;">Click<span>Craft</span></h3>
+          </div>
+          <p>A performance marketing and growth consultancy helping brands scale with data-driven strategies, paid media, and conversion optimization.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="consultation.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul><li><a href="consultation.html">Performance Marketing</a></li><li><a href="consultation.html">Growth Strategy</a></li><li><a href="consultation.html">SEO & Content</a></li><li><a href="consultation.html">Analytics</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul><li><a href="#">LinkedIn</a></li><li><a href="#">Twitter</a></li><li><a href="#">Instagram</a></li><li><a href="mailto:hello@clickcraft.com">Email Us</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 ClickCraft. All rights reserved. Performance Marketing & Growth Consultancy.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50); });
+    document.getElementById('mobileToggle').addEventListener('click', () => { document.getElementById('mobileNav').classList.add('active'); });
+    document.getElementById('mobileClose').addEventListener('click', () => { document.getElementById('mobileNav').classList.remove('active'); });
+    document.querySelectorAll('.mobile-nav a').forEach(a => { a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('active')); });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
+
