@@ -1,0 +1,11 @@
+# IDE & Assistant directories
+.claude/
+.vscode/
+.idea/
+
+# System Files
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
