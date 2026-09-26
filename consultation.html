@@ -450,11 +450,11 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     function validateBusinessEmail(email) {
-      var blockedDomains = ['gmail.com','yahoo.com','yahoo.in','yahoo.co.in','yahoo.co.uk','hotmail.com','outlook.com','live.com','msn.com','aol.com','icloud.com','me.com','mac.com','mail.com','protonmail.com','proton.me','zoho.com','yandex.com','gmx.com','gmx.net','rediffmail.com','fastmail.com','tutanota.com','guerrillamail.com','mailinator.com','tempmail.com','throwaway.email','yopmail.com','sharklasers.com','guerrillamailblock.com','grr.la','dispostable.com','maildrop.cc'];
+      var blockedDomains = ['yahoo.com','yahoo.in','yahoo.co.in','yahoo.co.uk','hotmail.com','outlook.com','live.com','msn.com','aol.com','icloud.com','me.com','mac.com','mail.com','protonmail.com','proton.me','zoho.com','yandex.com','gmx.com','gmx.net','rediffmail.com','fastmail.com','tutanota.com','guerrillamail.com','mailinator.com','tempmail.com','throwaway.email','yopmail.com','sharklasers.com','guerrillamailblock.com','grr.la','dispostable.com','maildrop.cc'];
       var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
       if (!emailRegex.test(email)) return 'Please enter a valid email address.';
       var domain = email.split('@')[1].toLowerCase();
-      if (blockedDomains.indexOf(domain) !== -1) return 'Please use your business email address. Free email providers (Gmail, Yahoo, etc.) are not accepted.';
+      if (blockedDomains.indexOf(domain) !== -1) return 'Please use your business email address. Free/disposable email providers (Yahoo, Hotmail, etc.) are not accepted.';
       return null;
     }
 
