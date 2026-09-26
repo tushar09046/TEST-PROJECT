@@ -1,4 +1,4 @@
-ï»¿# ClickCraft â€” Performance Marketing & Growth Consultancy
+# ClickCraft — Performance Marketing & Growth Consultancy
 
 A modern, responsive multi-page marketing website for **ClickCraft**, a performance marketing and growth consultancy helping brands scale with data-driven strategies, paid media, and conversion optimization.
 
@@ -43,11 +43,11 @@ Loaded via Google Fonts CDN.
 
 ## Tech Stack
 
-- **HTML5** â€” Semantic markup with SEO meta tags
-- **CSS3** â€” CSS custom properties (variables), Flexbox, Grid, media queries
-- **Vanilla JavaScript** â€” Scroll-reveal animations, mobile nav, form validation
-- **Google Fonts** â€” Inter + Cardo
-- **FormSubmit.co** â€” Serverless form submission to email
+- **HTML5** — Semantic markup with SEO meta tags
+- **CSS3** — CSS custom properties (variables), Flexbox, Grid, media queries
+- **Vanilla JavaScript** — Scroll-reveal animations, mobile nav, form validation
+- **Google Fonts** — Inter + Cardo
+- **FormSubmit.co** — Serverless form submission to email
 
 No build tools, frameworks, or dependencies required. Open any `.html` file directly in a browser.
 
@@ -72,9 +72,9 @@ C:\TEST PROJECT\
 
 ---
 
-## Form Integration â€” FormSubmit.co
+## Form Integration — FormSubmit.co
 
-All forms submit to **hello@clickcraft.com** via FormSubmit.co (https://formsubmit.co/).
+All forms submit to **workclickcraft@gmail.com** via FormSubmit.co (https://formsubmit.co/).
 
 ### Configuration
 
@@ -82,7 +82,7 @@ Each form includes these hidden fields:
 
 | Field | Value | Purpose |
 |-------|-------|---------|
-| `_honey` | (empty, hidden) | Honeypot trap â€” bots fill this, humans don't |
+| `_honey` | (empty, hidden) | Honeypot trap — bots fill this, humans don't |
 | `_captcha` | `false` | Disables FormSubmit's default CAPTCHA page |
 | `_subject` | `New Contact Form Submission - ClickCraft` | Email subject line |
 | `_template` | `table` | Formats email as a clean HTML table |
@@ -101,21 +101,21 @@ Users attempting to submit with a blocked domain see an inline error:
 
 ## Bot Protection
 
-1. **Honeypot field** â€” Hidden `_honey` input that bots auto-fill, causing FormSubmit to reject the submission
-2. **Business email filter** â€” Blocks throwaway/disposable email services commonly used by spam bots
-3. **HTML5 validation** â€” Required fields with `type="email"` and `type="url"` enforce browser-level format checks
+1. **Honeypot field** — Hidden `_honey` input that bots auto-fill, causing FormSubmit to reject the submission
+2. **Business email filter** — Blocks throwaway/disposable email services commonly used by spam bots
+3. **HTML5 validation** — Required fields with `type="email"` and `type="url"` enforce browser-level format checks
 
 ---
 
 ## Features
 
-- **Fully Responsive** â€” Mobile-first with hamburger menu on all pages
-- **Scroll-Reveal Animations** â€” Content fades in on scroll via IntersectionObserver
-- **Animated Hero Blob** â€” CSS keyframe morph animation on the home page
-- **Consistent Navbar & Footer** â€” Identical structure, logo, and links across all pages
-- **Branded Favicon** â€” Custom favicon from `resource/Tushar automates.jpg`
-- **SEO Optimized** â€” Proper title, meta description, semantic HTML, heading hierarchy
-- **No Dependencies** â€” Pure HTML/CSS/JS, zero npm packages or build steps
+- **Fully Responsive** — Mobile-first with hamburger menu on all pages
+- **Scroll-Reveal Animations** — Content fades in on scroll via IntersectionObserver
+- **Animated Hero Blob** — CSS keyframe morph animation on the home page
+- **Consistent Navbar & Footer** — Identical structure, logo, and links across all pages
+- **Branded Favicon** — Custom favicon from `resource/Tushar automates.jpg`
+- **SEO Optimized** — Proper title, meta description, semantic HTML, heading hierarchy
+- **No Dependencies** — Pure HTML/CSS/JS, zero npm packages or build steps
 
 ---
 
