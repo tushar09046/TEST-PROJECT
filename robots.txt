@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://tushar09046.github.io/TEST-PROJECT/sitemap.xml

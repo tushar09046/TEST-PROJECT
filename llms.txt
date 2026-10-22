@@ -1,0 +1,24 @@
+# ClickCraft - Performance Marketing & Growth Consultancy
+
+> Data-driven performance marketing agency scaling B2B SaaS, E-commerce, and high-growth brands.
+
+## About
+ClickCraft is a performance marketing and growth consultancy that helps brands scale through data-driven strategies, paid media optimization, and conversion rate improvements. We specialize in turning marketing spend into measurable revenue.
+
+## Services
+- Performance Marketing (Google Ads, Meta Ads, LinkedIn Ads)
+- Growth Strategy Consultation
+- Conversion Rate Optimization (CRO)
+- SEO & Content Strategy
+- Analytics & Reporting Dashboards
+- Funnel Analysis & Optimization
+
+## Contact
+- Email: workclickcraft@gmail.com
+- Website: https://tushar09046.github.io/TEST-PROJECT/
+
+## Pages
+- Home: https://tushar09046.github.io/TEST-PROJECT/
+- About: https://tushar09046.github.io/TEST-PROJECT/about.html
+- Services/Consultation: https://tushar09046.github.io/TEST-PROJECT/consultation.html
+- Contact: https://tushar09046.github.io/TEST-PROJECT/contact.html

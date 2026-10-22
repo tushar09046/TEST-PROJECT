@@ -1,4 +1,4 @@
-# ClickCraft — Performance Marketing & Growth Consultancy
+# ClickCraft ï¿½ Performance Marketing & Growth Consultancy
 
 A modern, responsive multi-page marketing website for **ClickCraft**, a performance marketing and growth consultancy helping brands scale with data-driven strategies, paid media, and conversion optimization.
 
@@ -43,11 +43,11 @@ Loaded via Google Fonts CDN.
 
 ## Tech Stack
 
-- **HTML5** — Semantic markup with SEO meta tags
-- **CSS3** — CSS custom properties (variables), Flexbox, Grid, media queries
-- **Vanilla JavaScript** — Scroll-reveal animations, mobile nav, form validation
-- **Google Fonts** — Inter + Cardo
-- **FormSubmit.co** — Serverless form submission to email
+- **HTML5** ï¿½ Semantic markup with SEO meta tags
+- **CSS3** ï¿½ CSS custom properties (variables), Flexbox, Grid, media queries
+- **Vanilla JavaScript** ï¿½ Scroll-reveal animations, mobile nav, form validation
+- **Google Fonts** ï¿½ Inter + Cardo
+- **FormSubmit.co** ï¿½ Serverless form submission to email
 
 No build tools, frameworks, or dependencies required. Open any `.html` file directly in a browser.
 
@@ -72,7 +72,7 @@ C:\TEST PROJECT\
 
 ---
 
-## Form Integration — FormSubmit.co
+## Form Integration ï¿½ FormSubmit.co
 
 All forms submit to **workclickcraft@gmail.com** via FormSubmit.co (https://formsubmit.co/).
 
@@ -82,7 +82,7 @@ Each form includes these hidden fields:
 
 | Field | Value | Purpose |
 |-------|-------|---------|
-| `_honey` | (empty, hidden) | Honeypot trap — bots fill this, humans don't |
+| `_honey` | (empty, hidden) | Honeypot trap ï¿½ bots fill this, humans don't |
 | `_captcha` | `false` | Disables FormSubmit's default CAPTCHA page |
 | `_subject` | `New Contact Form Submission - ClickCraft` | Email subject line |
 | `_template` | `table` | Formats email as a clean HTML table |
@@ -101,21 +101,21 @@ Users attempting to submit with a blocked domain see an inline error:
 
 ## Bot Protection
 
-1. **Honeypot field** — Hidden `_honey` input that bots auto-fill, causing FormSubmit to reject the submission
-2. **Business email filter** — Blocks throwaway/disposable email services commonly used by spam bots
-3. **HTML5 validation** — Required fields with `type="email"` and `type="url"` enforce browser-level format checks
+1. **Honeypot field** ï¿½ Hidden `_honey` input that bots auto-fill, causing FormSubmit to reject the submission
+2. **Business email filter** ï¿½ Blocks throwaway/disposable email services commonly used by spam bots
+3. **HTML5 validation** ï¿½ Required fields with `type="email"` and `type="url"` enforce browser-level format checks
 
 ---
 
 ## Features
 
-- **Fully Responsive** — Mobile-first with hamburger menu on all pages
-- **Scroll-Reveal Animations** — Content fades in on scroll via IntersectionObserver
-- **Animated Hero Blob** — CSS keyframe morph animation on the home page
-- **Consistent Navbar & Footer** — Identical structure, logo, and links across all pages
-- **Branded Favicon** — Custom favicon from `resource/Tushar automates.jpg`
-- **SEO Optimized** — Proper title, meta description, semantic HTML, heading hierarchy
-- **No Dependencies** — Pure HTML/CSS/JS, zero npm packages or build steps
+- **Fully Responsive** ï¿½ Mobile-first with hamburger menu on all pages
+- **Scroll-Reveal Animations** ï¿½ Content fades in on scroll via IntersectionObserver
+- **Animated Hero Blob** ï¿½ CSS keyframe morph animation on the home page
+- **Consistent Navbar & Footer** ï¿½ Identical structure, logo, and links across all pages
+- **Branded Favicon** ï¿½ Custom favicon from `resource/Tushar automates.jpg`
+- **SEO Optimized** ï¿½ Proper title, meta description, semantic HTML, heading hierarchy
+- **No Dependencies** ï¿½ Pure HTML/CSS/JS, zero npm packages or build steps
 
 ---
 
@@ -178,3 +178,15 @@ Replace `resource/Tushar automates.jpg` with your new logo file and update refer
 ## License
 
 (c) 2026 ClickCraft. All rights reserved.
+
+## SEO Features
+- JSON-LD Structured Data (Organization, WebSite, WebPage, ProfessionalService schemas)
+- OpenGraph meta tags for rich social sharing
+- Twitter Card meta tags
+- XML Sitemap (sitemap.xml)
+- robots.txt with sitemap reference
+- Canonical URLs on all pages
+- Semantic HTML5 structure
+- Optimized meta descriptions and keywords
+- llms.txt for AI/LLM readability
+- Preconnect hints for faster font loading
